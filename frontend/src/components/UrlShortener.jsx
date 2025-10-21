@@ -6,18 +6,22 @@ const UrlShortener = () => {
   const [shortUrl, setShortUrl] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const API_BASE = import.meta.env.VITE_API_URL ;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!originalUrl.trim()) return;
+
     setLoading(true);
     setShortUrl("");
 
     try {
-      const res = await axios.post("https://bytelink-ekej.onrender.com/api/shorten", { originalUrl });
+      // Dynamic API base URL
+      const res = await axios.post(`${API_BASE}/shorten`, { originalUrl });
       setShortUrl(res.data.shortUrl);
       setOriginalUrl("");
     } catch (err) {
-      console.error(err);
+      console.error("Error shortening URL:", err);
       alert("Failed to shorten URL. Please try again.");
     } finally {
       setLoading(false);
