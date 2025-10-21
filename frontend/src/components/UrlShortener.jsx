@@ -13,7 +13,7 @@ const UrlShortener = () => {
     setShortUrl("");
 
     try {
-      const res = await axios.post("http://localhost:5000/shorten", { originalUrl });
+      const res = await axios.post("https://bytelink-ekej.onrender.com/api/shorten", { originalUrl });
       setShortUrl(res.data.shortUrl);
       setOriginalUrl("");
     } catch (err) {
