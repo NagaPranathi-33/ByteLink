@@ -53,4 +53,35 @@ This project demonstrates full-stack web development skills, combining frontend 
 
 ---
 
+**Installation & Setup**
+**1️ Clone the repository**
+git clone https://github.com/your-username/bytelink.git
+cd bytelink
+
+**2️ Backend Setup**
+cd backend
+npm install
+
+---
+Create a .env file inside /backend with the following content:
+
+MONGO_URI=your_mongodb_connection_string
+BASE_URL=http://localhost:5000
+PORT=5000
+---
+
+Start the backend server:
+npm run dev
+
+Your backend will run at 👉 http://localhost:5000
+
+
+**3️ Frontend Setup**
+
+cd ../frontend
+npm install
+npm run dev
+
+Your frontend will run at 👉 http://localhost:5173
+
 
